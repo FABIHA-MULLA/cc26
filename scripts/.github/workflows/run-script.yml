@@ -1,0 +1,20 @@
+name: Run script
+
+on:
+  push:
+    branches: [main]        # runs when you push or merge to main
+  workflow_dispatch:         # lets you run it manually with a button
+  schedule:
+    - cron: '0 6 * * *'      # optional: runs every day at 06:00 UTC
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/sync.js
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
