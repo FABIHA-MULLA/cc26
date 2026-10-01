@@ -1,4 +1,4 @@
-const url = 'https://unicorn19.netlify.app/.netlify/functions/items';
+const url = 'https://unicorn19.netlify.app/api/sync';
 
 async function run() {
   const res = await fetch(url, {
