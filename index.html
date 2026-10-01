@@ -8,8 +8,18 @@
     <h1>Hello World!</h1>
     <p>This is my first HTML page.</p>
 
-    <button>Click Me</button>
+    <form id="item-form">
+        <input type="text" id="item-name" placeholder="New item name" required>
+        <button type="submit">Add</button>
+    </form>
+    <p id="status" role="status"></p>
+
+    <h2>Items</h2>
+    <ul id="item-list">
+        <li>No items yet.</li>
+    </ul>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
-
